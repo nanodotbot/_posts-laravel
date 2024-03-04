@@ -1,0 +1,103 @@
+main {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+main > * {
+  width: 700px;
+  max-width: 95vw;
+  margin-top: var(--default-gap);
+}
+main > p.first,
+main > a.first {
+  margin-top: calc(2 * var(--default-gap));
+}
+main > a {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  gap: calc(var(--default-gap) / 2);
+}
+main > a:hover > svg.icon {
+  color: var(--link-hover-text);
+  background-color: var(--link-hover-bg);
+}
+main > div {
+  margin-bottom: calc(var(--default-gap) / 2);
+}
+main > div > a {
+  display: block;
+  width: max-content;
+}
+main > div > a > p {
+  color: var(--link-text);
+  background-color: var(--link-bg);
+  font-size: var(--font-size-small);
+}
+main > div > a:hover > p {
+  color: var(--link-hover-text);
+  background-color: var(--link-hover-bg);
+}
+main > div > form > textarea.message {
+  display: none;
+}
+main > div > form > textarea.message.active {
+  display: block;
+}
+main > div > p.chat-message {
+  display: none;
+}
+main > div > p.chat-message.active {
+  display: block;
+}
+main > div > div {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  gap: var(--default-gap);
+}
+main > div > div.show-message {
+  margin-top: var(--default-gap);
+  grid-template-columns: none;
+  grid-template-rows: max-content max-content;
+  gap: 0;
+}
+main > div > div > div > button.edit,
+main > div > div > div > button.save,
+main > div > div > div > button.cancel {
+  width: max-content;
+  padding: 0;
+  margin: 0;
+  color: var(--link-text);
+  background-color: var(--link-bg);
+  font-size: var(--font-size-small);
+}
+main > div > div > div > button.edit:hover,
+main > div > div > div > button.save:hover,
+main > div > div > div > button.cancel:hover {
+  color: var(--link-hover-text);
+  background-color: var(--link-hover-bg);
+}
+main > div > div > div > button.delete {
+  width: max-content;
+  padding: 0;
+  margin: 0;
+  color: var(--error);
+  background-color: var(--link-bg);
+  font-size: var(--font-size-small);
+}
+main > div > div > div > button.delete:hover {
+  color: var(--text);
+  background-color: var(--error-even-lighter);
+}
+main > div > div > div.save-div,
+main > div > div > div.edit-div {
+  display: none;
+}
+main > div > div > div.save-div.active,
+main > div > div > div.edit-div.active {
+  display: block;
+}
+main hr {
+  margin-bottom: var(--default-gap);
+}

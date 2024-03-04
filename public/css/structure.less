@@ -1,0 +1,113 @@
+main {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+
+    > * {
+        width: 700px;
+        max-width: 95vw;
+        
+        margin-top: var(--default-gap);
+    }
+    > p.first, > a.first {
+        margin-top: calc(2 * var(--default-gap));
+    }
+    > a {
+        display: grid;
+        grid-template-columns: max-content max-content;
+        align-items: center;
+        gap: calc(var(--default-gap) / 2);
+
+        &:hover > svg.icon {
+            color: var(--link-hover-text);
+            background-color: var(--link-hover-bg);
+        }
+    }
+    > div {
+        margin-bottom: calc(var(--default-gap) / 2);
+            
+        > a {
+            display: block;
+            width: max-content;
+            > p {
+                color: var(--link-text);
+                background-color: var(--link-bg);
+                font-size: var(--font-size-small);
+            }
+            &:hover > p {
+                color: var(--link-hover-text);
+                background-color: var(--link-hover-bg);
+            }
+        }
+        > form {
+            > textarea.message {
+                display: none;
+
+                &.active {
+                    display: block;
+                }    
+            }
+        }
+        > p.chat-message {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+        > div {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: center;
+            gap: var(--default-gap);
+
+            &.show-message {
+                margin-top: var(--default-gap);
+
+                grid-template-columns: none;
+                grid-template-rows: max-content max-content;
+                gap: 0;
+            }
+            > div {
+                > button.edit, > button.save, > button.cancel {
+                    width: max-content;
+                    padding: 0;
+                    margin: 0;
+    
+                    color: var(--link-text);
+                    background-color: var(--link-bg);
+                    font-size: var(--font-size-small);
+    
+                    &:hover {
+                        color: var(--link-hover-text);
+                        background-color: var(--link-hover-bg);
+                    }
+                }
+                > button.delete {
+                    width: max-content;
+                    padding: 0;
+                    margin: 0;
+    
+                    color: var(--error);
+                    background-color: var(--link-bg);
+                    font-size: var(--font-size-small);
+    
+                    &:hover {
+                        color: var(--text);
+                        background-color: var(--error-even-lighter);
+                    }
+                }
+            }
+            > div.save-div, > div.edit-div {
+                display: none;
+    
+                &.active {
+                    display: block;
+                }
+            }
+        }
+    }
+    hr {
+        margin-bottom: var(--default-gap);
+    }
+}
